@@ -1,4 +1,5 @@
 DND Battle Simulator
+A simulator of an average DND character to simulate a normal fight. Make your character and pick your enemies to test how they match up.
 
 RESTful Routes
 ![Alt text](./img/DND.png?raw=true "Title")
