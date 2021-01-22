@@ -7,6 +7,11 @@ RESTful Routes
 Models
 ![Alt text](./img/BasicModels.PNG?raw=true "Title")
 
+Model make for attack
+- proficiency
+- attack names
+- 
+
 Wireframe of Index
 ![Alt text](./img/DNDIndex.PNG?raw=true "Title")
 
@@ -27,6 +32,9 @@ MVP
 -[] Let user put in name of enemy
 -[] Let user make list of enemies
 -[] Let user fight enemies
+-[] CR rating/ average damage
+-[] Assume hit
+-[] Make character and average damage
 
 Stretch Goal
 -[] Give exp to user when enemy is dead

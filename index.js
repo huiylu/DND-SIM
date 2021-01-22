@@ -7,14 +7,15 @@ const app = express();
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 app.use(ejsLayouts);
+app.use('/character', require('./routes/character'));
+app.use('/enemy', require('./routes/enemy'));
 
 app.get('/', (req,res)=>{
-    axios.get('https://www.dnd5eapi.co/api/monsters/adult-black-dragon/').then(response=>{
-        console.log(response.data);
-        res.render('index', {result: response.data});
-        //res.send(response.data);
-    });
-    //res.send('Test');
+    
+    res.render('index');
 });
+
+
+
 
 app.listen(8000);
