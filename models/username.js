@@ -11,7 +11,17 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      models.username.hasMany(models.character)
+      //models.username.hasMany(models.character)
+    }
+    validPassword(typedPassword){
+      let isValid = bcrypt.compareSync(typedPassword, this.password);
+      return isValid;
+    }
+
+    toJSON(){
+      let userData = this.get();
+      delete userData.password;
+      return userData;
     }
   };
   username.init({

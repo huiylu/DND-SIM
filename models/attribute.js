@@ -19,7 +19,8 @@ module.exports = (sequelize, DataTypes) => {
     con: DataTypes.INTEGER,
     int: DataTypes.INTEGER,
     wis: DataTypes.INTEGER,
-    cha: DataTypes.INTEGER
+    cha: DataTypes.INTEGER,
+    characterId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'attribute',

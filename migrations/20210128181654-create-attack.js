@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('characters', {
+    await queryInterface.createTable('attacks', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -11,10 +11,16 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
-      acStack: {
+      attackbonus: {
         type: Sequelize.INTEGER
       },
-      health: {
+      damage: {
+        type: Sequelize.STRING
+      },
+      savingDc: {
+        type: Sequelize.BOOLEAN
+      },
+      characterId: {
         type: Sequelize.INTEGER
       },
       createdAt: {
@@ -28,6 +34,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('characters');
+    await queryInterface.dropTable('attacks');
   }
 };

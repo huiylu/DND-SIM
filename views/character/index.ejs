@@ -3,9 +3,14 @@
 
 <% characters.forEach(character=>{ %>
     <div>
-        <h2><%= character.name %></h3>
+        <h2><a href="character/<%= character.id %>"><%= character.name %></a></h2>
+        <h2>Class: <%= character.job %></h2>
+        <p>Health: <%= character.health %></p>
+        <p>Armor Class: <%= character.acStack %></p>
         
-        <p><%= character.health %></p>
-        <p><%= character.acStack %></p>
+        
+        
     </div>
 <% }); %>
+
+<a href="/character/new">Make a New Character</a>

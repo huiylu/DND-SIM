@@ -1,5 +1,5 @@
 module.exports=(req,res,next)=>{
-    if(req.username){
+    if(req.user){
         next();
     } else {
         console.log('No');

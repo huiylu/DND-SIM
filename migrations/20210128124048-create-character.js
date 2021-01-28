@@ -1,32 +1,23 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('attributes', {
+    await queryInterface.createTable('characters', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      str: {
+      name: {
+        type: Sequelize.STRING
+      },
+      job: {
+        type: Sequelize.STRING
+      },
+      acStack: {
         type: Sequelize.INTEGER
       },
-      dex: {
-        type: Sequelize.INTEGER
-      },
-      con: {
-        type: Sequelize.INTEGER
-      },
-      int: {
-        type: Sequelize.INTEGER
-      },
-      wis: {
-        type: Sequelize.INTEGER
-      },
-      cha: {
-        type: Sequelize.INTEGER
-      },
-      characterId: {
+      health: {
         type: Sequelize.INTEGER
       },
       createdAt: {
@@ -40,6 +31,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('attributes');
+    await queryInterface.dropTable('characters');
   }
 };

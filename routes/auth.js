@@ -9,36 +9,36 @@ router.get('/signup', (req,res)=>{
 });
 
 router.post('/signup',(req,res)=>{
-    db.username.findOrCreate({
-        where: {
-          name: req.body.name
-        },
-        defaults: {
-          
-          password: req.body.password
-        }
-      }).then(([user, created]) => {
-        // if the user WAS created
-        if (created) {
-          // redirect to homepage or profile
-          console.log(user.name+' made');
-          passport.authenticate('local', {
-            successRedirect: '/',
-            successFlash: 'Successful Account creation'
-          })(req, res);
-        } else { // else (there is a user at that email so they can't sign up)
-          
-          //req.flash('error', 'email already exists');
-          // redirect to /auth/signup 
-          res.redirect('/auth/signup');
-        }
-      }).catch(err => {
+  db.username.findOrCreate({
+      where: {
+        name: req.body.name
+      },
+      defaults: {
         
-        console.log(err);
-        //req.flash('error',err.message);
-        // if there is an error, it's probably a validation error, so we'll return to /auth/signup
-        res.redirect('/auth/signup');
-      })
+        password: req.body.password
+      }
+    }).then(([user, created]) => {
+      // if the user WAS created
+      if (created) {
+        // redirect to homepage or profile
+        console.log(user.name+' made');
+        passport.authenticate('local', {
+          successRedirect: '/',
+          successFlash: 'Successful Account creation'
+        })(req, res);
+      } else { // else (there is a user at that email so they can't sign up)
+          
+        //req.flash('error', 'email already exists');
+        // redirect to /auth/signup 
+        res.redirect('/auth/signup');s
+      }
+    }).catch(err => {
+        
+      console.log(err);
+      //req.flash('error',err.message);
+      // if there is an error, it's probably a validation error, so we'll return to /auth/signup
+      res.redirect('/auth/signup');
+    })
 });
 
 router.get('/login', (req, res) => {
