@@ -1,8 +1,11 @@
 <h1>Character Stat</h1>
 
 
+<% characters.forEach(character=>{ %>
     <div>
-        <h3><%= result.name %></h3>
+        <h2><%= character.name %></h3>
         
-        <p><%= result.type %></p>
+        <p><%= character.health %></p>
+        <p><%= character.acStack %></p>
     </div>
+<% }); %>

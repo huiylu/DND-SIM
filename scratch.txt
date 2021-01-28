@@ -1,0 +1,14 @@
+sequelize db:create
+
+sequelize model:create --name username --attributes name:string,password:string
+
+sequelize model:create --name character --attributes name:string,acStack:integer,health:integer
+sequelize model:create --name attribute --attributes str:integer,dex:integer,con:integer,int:integer,wis:integer,cha:integer
+sequelize model:create --name attack --attributes name:string,damage:string,savingDc:boolean
+
+sequelize model:create --name enemy --attributes name:string
+
+
+many to many for character
+-attributes
+-attacks (and spells)

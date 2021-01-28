@@ -1,6 +1,6 @@
 const { default: axios } = require('axios');
 const express = require('express');
-//const db = require('../models');
+const db = require('../models');
 const router = express.Router();
 
 router.get('/',(req,res) =>{
