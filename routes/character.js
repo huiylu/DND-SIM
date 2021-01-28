@@ -48,11 +48,22 @@ router.get('/:id',(req,res)=>{
         db.attribute.findOne({
             where: { characterId: req.params.id}
         }).then((attributes)=>{
-            res.render('character/char',{characters: characters,attributes: attributes});
+            db.attack.findAll({
+                where: { characterId: req.params.id}
+            }).then(attacks=>{
+                res.render('character/char',{characters: characters,attributes: attributes, attacks:attacks});
+            })
         });
         
+    });
+});
+
+router.get('/:id/attack',(req,res)=>{
+    axios.get(`https://www.dnd5eapi.co/api/spells/?name=${req.body.search}`).then((response)=>{
+        res.render('character/attacks', {spells: response.data});
     })
-})
+    
+});
 
 
 module.exports=router;

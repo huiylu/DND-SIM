@@ -27,8 +27,8 @@ Technologies
 - DND api
 
 MVP
--[] Make Index where user can log in
--[] Let user make character if there is no chracter
+-[-] Make Index where user can log in
+-[X] Let user make character
 -[] Let user put in name of enemy
 -[] Let user make list of enemies
 -[] Let user fight enemies
