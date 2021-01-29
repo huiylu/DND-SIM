@@ -1,9 +1,13 @@
 //const dice = require('rpg-dice-roller')
 
-function testAttack(){
+//const db = require("../../models");
+
+function testAttack(name,damage){
     //console.log(name);
-    let name=document.getElementById("attackname").innerHTML;
-    let damage=document.getElementById("attackdamage").innerText;
+    
+    //let name=document.getElementById("attackname").innerHTML;
+    //let damage=document.getElementById("attackdamage").innerText;
+    console.log(damage);
     var numDice= damage.split("d");
     //console.log(numDice[0]);
     let numDamage=0;
@@ -15,7 +19,7 @@ function testAttack(){
         crit=0;
     }
     for(let i=0;i<parseInt(numDice[0]);i++){
-        numDamage+=Math.floor(Math.random()*parseInt(numDice[1])+1);
+        numDamage+=Math.floor(Math.random()*parseInt(numDice[1])+1.5);
     }
     document.getElementById("name").innerHTML=name;
     document.getElementById("attack").innerHTML=attackDie;

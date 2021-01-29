@@ -20,7 +20,7 @@
         <div id="attacks">
         Name: <p id="attackname"><%= attack.name %></p>
         Damage:<p id="attackdamage"> <%= attack.damage %></p>
-        <button onclick="testAttack()">Test Attack</button>
+        <button onclick="testAttack('<%= attack.name %>','<%= attack.damage %>')">Test Attack</button>
         </div>
     <% }) %>
 
