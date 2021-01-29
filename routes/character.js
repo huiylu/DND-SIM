@@ -29,9 +29,18 @@ router.post('/',(req,res)=>{
             wis: req.body.wis,
             cha: req.body.cha,
             characterId: dndChar.id
-        }).then(()=>{
-            console.log(dndChar.name+' has been made.');
-            res.redirect('/character');
+        }).then((attri)=>{
+            db.attack.create({
+                name: "Fist",
+                attackbonus: 0,
+                damage: "1d4",
+                savingDc: false,
+                characterId: dndChar.id
+            }).then(()=>{
+                console.log(dndChar.name+' has been made.');
+                res.redirect('/character');
+            })
+            
         });
         
     })
@@ -59,11 +68,24 @@ router.get('/:id',(req,res)=>{
 });
 
 router.get('/:id/attack',(req,res)=>{
-    axios.get(`https://www.dnd5eapi.co/api/spells/?name=${req.body.search}`).then((response)=>{
-        res.render('character/attacks', {spells: response.data});
-    })
+    //axios.get(`https://www.dnd5eapi.co/api/spells/?name=${req.body.search}`).then((response)=>{
+        res.render('character/attacks', {id:req.params.id});
+    //})
     
 });
 
+router.post('/:id',(req,res)=>{
+    console.log(req.body.name);
+    db.attack.create({
+        name: req.body.name,
+        attackbonus: req.body.attackbonus,
+        damage: req.body.damage,
+        characterId: req.params.id,
+        savingDc: req.body.savingDc
+    }).then((attacks)=>{
+        console.log(attacks.name + ' was made');
+        res.redirect(`/character/${req.params.id}`);
+    })
+});
 
 module.exports=router;

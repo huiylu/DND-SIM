@@ -11,8 +11,11 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
-      favorited: {
-        type: Sequelize.BOOLEAN
+      ac: {
+        type: Sequelize.INTEGER
+      },
+      health: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,

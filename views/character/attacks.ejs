@@ -1,10 +1,11 @@
 <div>
     <h1>Find or make an attack</h1>
-    <form>
+    <form action="/character/<%= id %>" method="POST">
         Name: <input type="text" name="name">
         Bonuses: <input type="number" name="attackbonus">
         Damage: <input type="text" name="damage">
         Saving DC: <input type="boolean" name="savingDc">
+        <input type="hidden" name="id" value="<%= id %>">
         <input type="submit" value="Create">
     </form>
     
@@ -13,5 +14,6 @@
 <div>
     <p>Find Spell</p>
     <input type="text" name="search">
-    <p><%= spells %></p>
+    <input type="integer" name="spslot">
+    
 </div>

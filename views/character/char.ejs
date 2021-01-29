@@ -12,11 +12,20 @@
     <p>Wisdom: <%= attributes.wis %></p>
     <p>Charisma: <%= attributes.cha %></p>
 
+
+    
     <h3>Attacks</h3>
+    
     <% attacks.forEach(attack=>{ %>
-        <p>Name: </p>
-        <p>Damage: </p>
+        <div id="attacks">
+        Name: <p id="attackname"><%= attack.name %></p>
+        Damage:<p id="attackdamage"> <%= attack.damage %></p>
+        <button onclick="testAttack()">Test Attack</button>
+        </div>
     <% }) %>
+
+    <p id="name"></p>
+    <p id="damage"></p>
     <a href="../character/<%= characters.id %>/attack">Create an attack</a>
     
     

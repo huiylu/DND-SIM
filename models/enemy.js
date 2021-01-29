@@ -15,7 +15,8 @@ module.exports = (sequelize, DataTypes) => {
   };
   enemy.init({
     name: DataTypes.STRING,
-    favorited: DataTypes.BOOLEAN
+    ac: DataTypes.INTEGER,
+    health: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'enemy',

@@ -8,6 +8,7 @@ const helmet = require('helmet');
 const passport =require('./config/ppConfig');
 const isLoggedIn = require('./middleware/isLoggedIn');
 const db = require('./models');
+const dice= require('rpg-dice-roller');
 
 const app = express();
 

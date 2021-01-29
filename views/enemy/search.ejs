@@ -1,3 +1,12 @@
 
-<h1>You found </h1>
+<h1>You found <%= enemy.name %></h1>
+<h3>Name: <%= enemy.name %></h3>
+<p>Armor Class: <%= enemy.armor_class %> </p>
+<p>Health: <%= enemy.hit_points %></p>
 
+<form action="/enemy" method="POST">
+    <input type="hidden" name="name" value="<%= enemy.name %>">
+    <input type="hidden" name="ac" value="<%= enemy.armor_class %>">
+    <input type="hidden" name="health" value="<%= enemy.hit_points %>">
+    <input type="button" value="Favorite">
+</form>
