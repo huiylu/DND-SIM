@@ -21,7 +21,7 @@ function testAttack(name,damage){
     for(let i=0;i<parseInt(numDice[0]);i++){
         numDamage+=Math.floor(Math.random()*parseInt(numDice[1])+1.5);
     }
-    document.getElementById("name").innerHTML=name;
-    document.getElementById("attack").innerHTML=attackDie;
-    document.getElementById("damage").innerHTML=numDamage*crit;
+    document.getElementById("name").innerHTML=name+" Attack";
+    document.getElementById("attack").innerHTML="Attack Roll: "+attackDie.toString();
+    document.getElementById("damage").innerHTML="Damage: "+ (numDamage*crit).toString();
 }
